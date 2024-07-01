@@ -1,0 +1,8 @@
+<p>todo-list works!</p>
+@for (item of todoItemList; track item.id) {
+  <section class="todo-item-container">
+    <h2>{{item.title}}</h2>
+    <p>{{item.details}}</p>
+    <p>Completed: {{item.completed}} Deleted: {{item.deleted}}</p>
+  </section>
+}
