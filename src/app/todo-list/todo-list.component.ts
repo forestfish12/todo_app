@@ -16,4 +16,8 @@ export class TodoListComponent {
   constructor() {
     this.todoItemList = this.todoListService.getAllTodoItems();
   }
+
+  completeHandler(e: Event): void {
+    console.log(`Clicked ${e}`)
+  }
 }
