@@ -7,15 +7,14 @@ import { ItemComponent } from '../item/item.component';
   selector: 'todo-list',
   standalone: true,
   imports: [ItemComponent],
-  templateUrl: './todo-list.component.html',
-  styleUrl: './todo-list.component.css'
+  templateUrl: './list.component.html',
+  styleUrl: './list.component.css'
 })
-export class TodoListComponent {
+export class ListComponent {
   todoItemList: TodoItem[] = [];
   todoListService: TodoListService = inject(TodoListService);
 
   constructor() {
     this.todoItemList = this.todoListService.getAllTodoItems();
   }
-
 }

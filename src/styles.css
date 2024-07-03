@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --complete-bg-color: hsl(0 0% 50%);
+    --complete-fg-color: hsl(0 0% 60%);
+}
+
 body {
     color: seashell;
     background-color: black;

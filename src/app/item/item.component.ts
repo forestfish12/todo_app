@@ -5,13 +5,13 @@ import { TodoItem } from '../todo-item';
   selector: 'todo-item',
   standalone: true,
   imports: [],
-  templateUrl: './todo-item.component.html',
-  styleUrl: './todo-item.component.css',
+  templateUrl: './item.component.html',
+  styleUrl: './item.component.css',
   host: {
     '[class.completed]': 'item.completed',
   }
 })
-export class TodoItemComponent {
+export class ItemComponent {
   @Input({required: true}) item!: TodoItem;
 
   completeHandler(): void {
