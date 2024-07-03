@@ -11,9 +11,9 @@ import { TodoItem } from '../todo-item';
 export class TodoItemComponent {
   @Input({required: true}) item!: TodoItem;
 
-  completeHandler(): void {
+  // completeHandler(): void {
   //   const checked: boolean | undefined = section.classList.toggle('completed');
-    const checked: boolean = 
+    // const checked: boolean = 
   //   if (checked) {
   //     button.innerText = 'Uncheck';
   //   } else {
