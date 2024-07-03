@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { TodoListService } from '../todo-list.service';
 import { TodoItem } from '../todo-item';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [],
+  imports: [TodoItemComponent],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
 })
@@ -17,7 +18,4 @@ export class TodoListComponent {
     this.todoItemList = this.todoListService.getAllTodoItems();
   }
 
-  completeHandler(e: Event): void {
-    console.log(`Clicked ${e}`)
-  }
 }

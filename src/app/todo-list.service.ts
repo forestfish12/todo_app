@@ -39,4 +39,24 @@ export class TodoListService {
   getAllTodoItems(): TodoItem[] {
     return this.todoItemList;
   }
+
+  getTodoItemById(id: number): TodoItem | undefined {
+    return this.todoItemList.find((item) => item.id === id);
+  }
+
+  addTodoItem(item: TodoItem): boolean {
+    const itemExists = this.getTodoItemById(item.id);
+
+    if (itemExists) {
+      console.error('Item already exists.');
+      return false;
+    }
+    
+    this.todoItemList.push(item);
+    return true;
+  }
+
+  updateTodoItem(): void {
+    // TODO: Implement updateTodoItem method.
+  }
 }

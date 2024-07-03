@@ -1,0 +1,15 @@
+section {
+    --complete-bg-color: hsl(0 0% 50%);
+    --complete-fg-color: hsl(0 0% 60%);
+}
+
+
+h2 {
+    margin: 0.8rem 0;
+}
+
+.completed {
+    background-color: var(--complete-bg-color);
+    color: var(--complete-fg-color);
+    border-color: var(--complete-fg-color);
+}

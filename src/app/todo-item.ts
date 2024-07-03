@@ -1,5 +1,5 @@
 export interface TodoItem {
-  id: Number,
+  id: number,
   title: String,
   details: String,
   completed: Boolean,
