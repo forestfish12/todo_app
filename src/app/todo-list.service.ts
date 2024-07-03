@@ -8,31 +8,23 @@ export class TodoListService {
   protected todoItemList: TodoItem[] = [
     {
       id: 1,
-      title: "First Todo",
-      details: "This is the first todo item",
-      completed: false,
-      deleted: false
+      name: "First Todo",
+      completed: true,
     },
     {
       id: 2,
-      title: "Second Todo",
-      details: "This is the second todo item",
-      completed: false,
-      deleted: false
+      name: "Second Todo",
+      completed: true,
     },
     {
       id: 3,
-      title: "Third Todo",
-      details: "This is the third todo item",
+      name: "Third Todo",
       completed: false,
-      deleted: false
     },
     {
       id: 4,
-      title: "Fourth Todo",
-      details: "This is the fourth todo item",
+      name: "Fourth Todo",
       completed: false,
-      deleted: false
     },
   ]
 
