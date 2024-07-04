@@ -18,10 +18,19 @@ export class ListComponent {
   }
 
   completeHandler(id: number): void {
-  //   this.item.completed = this.item.completed ? false : true;
     const todoItem = this.todoItemList.find(item => item.id === id);
     if (todoItem) {
       todoItem.completed = !todoItem.completed;
     }
+  }
+
+  deleteHandler(id: number): void {
+    this.todoService.deleteTodoItem(id);
+    this.todoItemList = this.todoService.getAllTodoItems();
+  }
+
+  addHandler(name: string): void {
+    this.todoService.addTodoItem(name);
+    this.todoItemList = this.todoService.getAllTodoItems();
   }
 }

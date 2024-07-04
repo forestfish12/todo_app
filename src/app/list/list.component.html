@@ -1,13 +1,21 @@
+<section class="input-section">
+  <input type="text" #nameInput/>
+  <button (click)="addHandler(nameInput.value)">Add</button>
+</section>
 
 <section class="todo-section">
   <ul>
     @for (item of todoItemList; track item.id) {
-      <li>
-        <input type="checkbox" [(checked)]="item.completed" (change)="completeHandler(item.id)" />
-        <p>{{item.name}}</p>
-        <p>Completed: {{ item.completed }}</p>
-        <button>Delete</button>
-      </li>
+    <li>
+      <input
+        type="checkbox"
+        [(checked)]="item.completed"
+        (change)="completeHandler(item.id)"
+      />
+      <p>{{ item.name }}</p>
+      <p>Completed: {{ item.completed }}</p>
+      <button (click)="deleteHandler(item.id)">Delete</button>
+    </li>
     }
   </ul>
 </section>

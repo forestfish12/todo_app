@@ -5,6 +5,8 @@ import { TodoItem } from './todo-item';
   providedIn: 'root'
 })
 export class TodoListService {
+  protected idCount = 5;
+
   protected todoItemList: TodoItem[] = [
     {
       id: 1,
@@ -36,19 +38,31 @@ export class TodoListService {
     return this.todoItemList.find((item) => item.id === id);
   }
 
-  addTodoItem(item: TodoItem): boolean {
-    const itemExists = this.getTodoItemById(item.id);
+  addTodoItem(name: string): boolean {
 
-    if (itemExists) {
-      console.error('Item already exists.');
-      return false;
-    }
     
-    this.todoItemList.push(item);
+    this.todoItemList.push({
+      name: name,
+      id: this.idCount,
+      completed: false
+    });
+
+    this.idCount++;
+
     return true;
   }
 
   updateTodoItem(): void {
     // TODO: Implement updateTodoItem method.
+  }
+
+  updateList(list: Array<TodoItem>): void {
+    this.todoItemList = list;
+    console.log(this.todoItemList);
+  }
+
+  deleteTodoItem(id: number): void {
+    this.todoItemList = this.todoItemList.filter(item => item.id !== id);
+    console.log(this.getAllTodoItems());
   }
 }
