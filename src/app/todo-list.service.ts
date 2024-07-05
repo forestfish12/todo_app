@@ -5,29 +5,29 @@ import { TodoItem } from './todo-item';
   providedIn: 'root'
 })
 export class TodoListService {
-  protected idCount = 5;
+  protected idCount = 0;
 
-  protected todoItemList: TodoItem[] = [
-    {
-      id: 1,
-      name: "First Todo",
-      completed: true,
-    },
-    {
-      id: 2,
-      name: "Second Todo",
-      completed: true,
-    },
-    {
-      id: 3,
-      name: "Third Todo",
-      completed: false,
-    },
-    {
-      id: 4,
-      name: "Fourth Todo",
-      completed: false,
-    },
+  todoItemList: TodoItem[] = [
+    // {
+    //   id: 1,
+    //   name: "First Todo",
+    //   completed: true,
+    // },
+    // {
+    //   id: 2,
+    //   name: "Second Todo",
+    //   completed: true,
+    // },
+    // {
+    //   id: 3,
+    //   name: "Third Todo",
+    //   completed: false,
+    // },
+    // {
+    //   id: 4,
+    //   name: "Fourth Todo",
+    //   completed: false,
+    // },
   ]
 
   getAllTodoItems(): TodoItem[] {
@@ -38,9 +38,11 @@ export class TodoListService {
     return this.todoItemList.find((item) => item.id === id);
   }
 
-  addTodoItem(name: string): boolean {
+  getItemsByStatus(completed: boolean): Array<TodoItem> {
+    return this.todoItemList.filter(item => item.completed === completed);
+  }
 
-    
+  addTodoItem(name: string): boolean {
     this.todoItemList.push({
       name: name,
       id: this.idCount,

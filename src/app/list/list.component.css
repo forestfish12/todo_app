@@ -4,35 +4,15 @@
 }
 
 .todo-section {
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-bottom: 20px;
 }
 
-ul {
-    width: 100%;
-    display: flex;
+.complete-section {
     flex-direction: column;
-    align-items: center;
+    margin-top: 20px;
 }
 
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+hr {
     width: 50%;
-    margin: 5px;
-    padding: 0 0.8rem;
-    border: seashell 2px solid;
-    border-radius: 1rem;
-}
-
-/* :host(.completed) {
-    background-color: var(--complete-bg-color);
-    color: var(--complete-fg-color);
-    border-color: var(--complete-fg-color);
-} */
-
-h2 {
-    margin: 0.8rem 0;
 }

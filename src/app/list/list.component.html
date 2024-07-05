@@ -3,19 +3,28 @@
   <button (click)="addHandler(nameInput.value)">Add</button>
 </section>
 
-<section class="todo-section">
-  <ul>
-    @for (item of todoItemList; track item.id) {
-    <li>
-      <input
-        type="checkbox"
-        [(checked)]="item.completed"
-        (change)="completeHandler(item.id)"
-      />
-      <p>{{ item.name }}</p>
-      <p>Completed: {{ item.completed }}</p>
-      <button (click)="deleteHandler(item.id)">Delete</button>
-    </li>
+<section class="todo-section flex-center">
+  @for (item of todoItemList; track item.id) {
+    @if (!item.completed) {
+      <todo-item 
+        class="flex-center"
+        [item]="item"
+        (onComplete)="completeHandler($event)"
+        (onDelete)="deleteHandler($event)"
+      ></todo-item>
     }
-  </ul>
+  }
+</section>
+<hr/>
+<section class="complete-section flex-center">
+  @for (item of todoItemList; track item.id) {
+    @if (item.completed) {
+      <todo-item 
+        class="flex-center"
+        [item]="item"
+        (onComplete)="completeHandler($event)"
+        (onDelete)="deleteHandler($event)"
+      ></todo-item>
+    }
+  }
 </section>

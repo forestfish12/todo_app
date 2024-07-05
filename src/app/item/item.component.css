@@ -1,0 +1,14 @@
+:host {
+    justify-content: space-between;
+    width: 50%;
+    margin: 5px;
+    padding: 0 0.8rem;
+    border: seashell 2px solid;
+    border-radius: 1rem;
+}
+
+:host(.completed) {
+    background-color: var(--complete-bg-color);
+    color: var(--complete-fg-color);
+    border-color: var(--complete-fg-color);
+}

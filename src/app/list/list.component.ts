@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { TodoListService } from '../todo-list.service';
 import { TodoItem } from '../todo-item';
+import { ItemComponent } from '../item/item.component';
 
 @Component({
   selector: 'todo-list',
   standalone: true,
-  imports: [],
+  imports: [ItemComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
@@ -26,11 +27,11 @@ export class ListComponent {
 
   deleteHandler(id: number): void {
     this.todoService.deleteTodoItem(id);
-    this.todoItemList = this.todoService.getAllTodoItems();
+    //Needs to set local list equal to the service list because the deleteTodoItem generates a new object
+    this.todoItemList = this.todoService.getAllTodoItems(); 
   }
 
   addHandler(name: string): void {
     this.todoService.addTodoItem(name);
-    this.todoItemList = this.todoService.getAllTodoItems();
   }
 }

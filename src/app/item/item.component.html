@@ -1,0 +1,8 @@
+<input
+type="checkbox"
+[(checked)]="item.completed"
+(change)="changeHandler(item.id)"
+/>
+<p>{{ item.name }}</p>
+<p>Completed: {{ item.completed }}</p>
+<button (click)="deleteHandler(item.id)">Delete</button>
